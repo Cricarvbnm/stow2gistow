@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+if [ "$#" -lt 2 ]; then
+  echo Not enough parameters >&2
+  echo 'usage: <stow package> <gistow package>' >&2
+  exit 1
+fi
+
+set -e
+
+stow -D "$1"
+rsync -a "$1/" ../
+
+gistow-init "$2"
+
+(cd "$1" && find . -type f -or -type s) | sed "s|^|.|" \
+  | xargs git --work-tree ../ --git-dir "$2" add
+gistow "$2" commit -m 'init'
+
+rm -rf "$1"
