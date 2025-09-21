@@ -1,7 +1,7 @@
 # Maintainer: alec <alecvbnm@outlook.com>
 pkgname=stow2gistow-git
-pkgver=r2.aba9430
-pkgrel=2
+pkgver=r3.aa5dab4
+pkgrel=1
 pkgdesc="Convert stow package to gistow package"
 arch=(any)
 url="https://github.com/Cricarvbnm/stow2gistow"
