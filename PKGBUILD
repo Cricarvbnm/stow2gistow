@@ -1,13 +1,13 @@
 # Maintainer: alec <alecvbnm@outlook.com>
 pkgname=stow2gistow-git
 pkgver=r3.aa5dab4
-pkgrel=1
+pkgrel=2
 pkgdesc="Convert stow package to gistow package"
 arch=(any)
 url="https://github.com/Cricarvbnm/stow2gistow"
 license=(MIT)
 provides=(stow2gistow)
-depends=(sed findutils rsync coreutils sh)
+depends=(sed findutils rsync coreutils sh stow)
 source=("git+${url}")
 sha256sums=(SKIP)
 
